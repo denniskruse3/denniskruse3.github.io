@@ -25,9 +25,16 @@
 
 	};
 
+
 	var $window = $(window);
 
 	$window.on('load', function() {
+
+		$(".toggle_container").hide();
+
+    $("p.trigger").click(function(){
+        $(this).toggleClass("active").next().slideToggle("normal");
+    });
 
 		skel
 			.breakpoints({
