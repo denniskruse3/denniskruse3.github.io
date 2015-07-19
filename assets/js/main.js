@@ -203,6 +203,12 @@
         					
         					$body._resize();
     					});
+
+    					$("p.collapseTrigger").click(function(){
+        					$(this).toggleClass("active").parent().slideToggle(0);
+        					
+        					$body._resize();
+    					});
    
 					if (skel.vars.IEVersion < 9)
 						$window
