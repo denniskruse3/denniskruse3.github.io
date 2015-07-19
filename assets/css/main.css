@@ -9,6 +9,11 @@
 
 /* Reset */
 
+.expand {
+	font-weight: 600;
+	text-decoration: none;
+	color: gray;
+}
 p.trigger{
     margin-bottom:7px;
     margin-top:-5px;

@@ -32,10 +32,6 @@
 
 		$(".toggle_container").hide();
 
-    $("p.trigger").click(function(){
-        $(this).toggleClass("active").next().slideToggle("normal");
-    });
-
 		skel
 			.breakpoints({
 				desktop: '(min-width: 737px)',
@@ -67,7 +63,6 @@
 					hash = window.location.hash.substring(1);
 
 				if (skel.vars.touch) {
-
 					settings.fadeSpeed = 0;
 					settings.resizeSpeed = 0;
 					$nav_links.find('span').remove();
@@ -105,7 +100,6 @@
 							t.hide();
 
 						t._activate = function(instant) {
-
 							// Check lock state and determine whether we're already at the target.
 								if (isLocked
 								||	activePanelId == id)
@@ -138,7 +132,6 @@
 							// Fade out active panel.
 								$footer.fadeTo(settings.fadeSpeed, 0.0001);
 								panels[activePanelId].fadeOut(instant ? 0 : settings.fadeSpeed, function() {
-
 									// Set new active.
 										activePanelId = id;
 
@@ -192,7 +185,6 @@
 				// Window.
 					$window
 						.resize(function() {
-
 							if (!isLocked)
 								$body._resize();
 
@@ -200,12 +192,18 @@
 
 					$window
 						.on('orientationchange', function() {
-
 							if (!isLocked)
 								$body._reposition();
 
 						});
 
+					$window 
+						$("p.trigger").click(function(){
+        					$(this).toggleClass("active").next().slideToggle(0);
+        					
+        					$body._resize();
+    					});
+   
 					if (skel.vars.IEVersion < 9)
 						$window
 							.on('resize', function() {
@@ -238,7 +236,6 @@
 
 			})
 			.on('-desktop', function() {
-
 				window.setTimeout(function() {
 					location.reload(true);
 				}, 50);
